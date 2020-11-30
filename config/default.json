@@ -1,3 +1,4 @@
 {
-    "mongoURl": "mongodb+srv://elyes123:elyes123@devconnector.49uuf.mongodb.net/<dbname>?retryWrites=true&w=majority"
+    "mongoURl": "mongodb+srv://elyes123:elyes123@devconnector.49uuf.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "jwtSecet":"mysecrettoken"
 }
