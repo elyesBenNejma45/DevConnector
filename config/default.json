@@ -1,4 +1,6 @@
 {
     "mongoURl": "mongodb+srv://elyes123:elyes123@devconnector.49uuf.mongodb.net/<dbname>?retryWrites=true&w=majority",
-    "jwtSecet":"mysecrettoken"
+    "jwtSecet":"mysecrettoken",
+    "githubClientId":"33477d57ddb4937c1506",
+    "gitHubSecret":"dc79e95208f7a8218a05eb71c77885904c75030c"
 }

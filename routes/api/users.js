@@ -47,7 +47,7 @@ router.post(
             const paylod = 
             {
                 user:{
-                    id:user.id     
+                    id:user.id    
                 }
             }
             const msg ="done";
