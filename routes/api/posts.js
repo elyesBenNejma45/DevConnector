@@ -7,8 +7,8 @@ const Profile = require("./models/Profile");
 const Post = require("./models/Post");
 
 
-//@route post a new Post
-//@desc  Test Route
+//@route POST api/posts
+//@desc  post a new Post
 //@access private
 router.post("/",[auth,[
     check("text","text is required").not().isEmpty()
@@ -35,8 +35,8 @@ router.post("/",[auth,[
     }
 });
 
-//@route find posts
-//@desc  Test Route
+//@route GET api/posts
+//@desc  get posts
 //@access private
 router.get("/",auth,async(req,res)=>{
     try {
@@ -51,8 +51,8 @@ router.get("/",auth,async(req,res)=>{
     }
 });
 
-//@route find post by id post
-//@desc  Test Route
+//@route GET api/posts/:id
+//@desc  find post by id post
 //@access private
 router.get("/:id",auth,async(req,res)=>{
     try {
@@ -71,7 +71,7 @@ router.get("/:id",auth,async(req,res)=>{
     }
 });
 
-//@route delete posts/post/:id
+//@route DELETE posts/post/:id
 //@desc  delete post
 //@access private
 router.delete("/post/:id",auth,async(req,res)=>{
@@ -95,7 +95,7 @@ router.delete("/post/:id",auth,async(req,res)=>{
 });
 
 
-//@route put api/posts/like/:id
+//@route PUT api/posts/like/:id
 //@desc  delete post
 //@access private
 router.put("/like/:id",auth,async(req,res)=>{
@@ -119,7 +119,7 @@ router.put("/like/:id",auth,async(req,res)=>{
     }
 });
 
-//@route put api/posts/unlike/:id
+//@route PUT api/posts/unlike/:id
 //@desc  delete post
 //@access private
 router.put("/unlike/:id",auth,async(req,res)=>{
@@ -144,7 +144,7 @@ router.put("/unlike/:id",auth,async(req,res)=>{
     }
 });
 
-//@route post a new coment
+//@route POST api/posts/comment/:id
 //@desc  comment on a Post
 //@access private
 
@@ -174,7 +174,7 @@ router.post("/comment/:id",[auth,[
     }
 });
 
-//@route post/comment/:id
+//@route POST api/posts/comment/:id/:commentId
 //@desc  delete a comment in a Post
 //@access private
 

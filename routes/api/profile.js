@@ -9,7 +9,7 @@ const  { check, validationResult } = require('express-validator');
 const { json, response } = require("express");
 
 
-//@route GET api/profile
+//@route GET api/profile/me
 //@desc  get the profile to a a specific user
 //@access Public
 router.get("/me",auth, async (req,res) =>{
@@ -95,7 +95,7 @@ router.post("/",[auth,[
 })
 
 
-//@route Get api/profile/
+//@route GET api/profile/
 //@desc  get all profiles
 //@access public
 router.get("/",async(req,res)=>{
@@ -109,7 +109,7 @@ router.get("/",async(req,res)=>{
     }
 })
 
-//@route Get api/profile/:user_id
+//@route GET api/profile/:user_id
 //@desc  get Profie by user Id
 //@access public
 router.get("/user/:user_id",async(req,res)=>{
@@ -130,7 +130,7 @@ router.get("/user/:user_id",async(req,res)=>{
 module.exports = router;
 
 
-//@route Delete api/profile/
+//@route DELETE api/profile/
 //@desc  Delete a profile
 //@access private
 router.delete("/",auth,async(req,res)=>{
@@ -149,7 +149,7 @@ router.delete("/",auth,async(req,res)=>{
     }
 })
  
-//@route update api/profile/experience
+//@route PUT api/profile/experience
 //@desc  update experience for a user profile
 //@access private
 
@@ -198,8 +198,8 @@ router.put('/experience',[auth,[
 
 })
 
-//@route Remove api/profile/experience
-//@desc  update experience for a user profile
+//@route DELETE api/profile/:expId
+//@desc  delete experience for a user profile
 //@access private
 
 router.delete('/experience/:expId',auth, async(req,res)=>{
@@ -255,7 +255,7 @@ router.delete('/experience/:expId',auth, async(req,res)=>{
 // })
 
 
-//@route update api/profile/education
+//@route PUT api/profile/education
 //@desc  update education for a user profile
 //@access private
 
