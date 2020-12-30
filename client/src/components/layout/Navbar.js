@@ -9,8 +9,8 @@ import { Fragment } from 'react';
      const authLinks = (
         <ul>
             <li>
-                <a a onclick={logout} href="#!">
-                <i className = "fas fa-sign-out-alt"></i>{''}
+                <a a onClick= {logout} href="#!">
+                <i className = "fas fa-sign-out-alt"></i>{' '}
                 <span className="hide-sm">logout </span>
                 </a>
             </li>
