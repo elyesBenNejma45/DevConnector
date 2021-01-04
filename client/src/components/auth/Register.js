@@ -29,30 +29,11 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     }
     else {
       register({ name, email, password });
-
-      if (isAuthenticated) {
-        return <Redirect to='/dashboard' />
-      }
-      //hooks
-      // const User = {
-      //   name,
-      //   email,
-      //   password
-      // }
-      // try {
-      //   const config = {
-      //     headers:{
-      //       'Content-Type':'application/json'
-      //     }
-      //   }
-      //   const body = JSON.stringify(User); //method converts a JavaScript object or value to a JSON string
-      //   const res = await axios.post("/api/users",body,config);
-      //   console.log(res.data);
-      // } catch (error) {
-      //   console.error(error.response.data);
-      // }
     }
   }
+    if (isAuthenticated) {
+    return <Redirect to='/dashboard' />
+    }
   return (
     <Fragment>
       <h1 className="large text-primary">Sign Up</h1>

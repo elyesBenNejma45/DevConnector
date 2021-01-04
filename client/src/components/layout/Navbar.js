@@ -9,9 +9,15 @@ import { Fragment } from 'react';
      const authLinks = (
         <ul>
             <li>
-                <a a onClick= {logout} href="#!">
+                <Link to = '/dashboard' href="#!">
+                <i className = "fas fa-user"></i>{' '}
+                <span className="hide-sm">Dashboard</span>
+                </Link>
+            </li>
+            <li>
+                <a onClick= {logout} href="#!">
                 <i className = "fas fa-sign-out-alt"></i>{' '}
-                <span className="hide-sm">logout </span>
+                <span className="hide-sm">logout</span>
                 </a>
             </li>
         </ul>
@@ -23,10 +29,10 @@ import { Fragment } from 'react';
                 <Link to="!#">Developers</Link>
             </li>
             <li>
-                <a href="/register">Register</a>
+                <Link to="/register">Register</Link>
             </li>
             <li>
-                <a href="/login">Login</a>
+                <Link to="/login">Login</Link>
             </li>
         </ul>
      );
