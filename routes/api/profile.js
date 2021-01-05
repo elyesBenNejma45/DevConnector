@@ -154,14 +154,14 @@ router.delete("/",auth,async(req,res)=>{
 //@access private
 
 router.put('/experience',[auth,[
-    check('title','company is required').not().isEmpty(),
+    check('title','title is required').not().isEmpty(),
     check('company','company is required').not().isEmpty(),
     check('from','from is required').not().isEmpty(),
 
 ]], async(req,res)=> {
     const error = validationResult(req);
     if(!error.isEmpty()){
-        return res.status(400).json({msg:"status has error"});
+        return res.status(400).json({errors:error.array()});
     }
     const {
         title,
@@ -267,7 +267,7 @@ router.put('/education',[auth,[
 ]], async(req,res)=> {
     const error = validationResult(req);
     if(!error.isEmpty()){
-        return res.status(400).json({msg:"status has error"});
+        return res.status(400).json({error:error.array()});
     }
     const {
         school,
