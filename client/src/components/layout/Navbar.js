@@ -9,6 +9,11 @@ import { Fragment } from 'react';
      const authLinks = (
         <ul>
             <li>
+                <Link to = '/profiles' href="#!">
+                    Developers
+                </Link>
+            </li>            
+            <li>
                 <Link to = '/dashboard' href="#!">
                 <i className = "fas fa-user"></i>{' '}
                 <span className="hide-sm">Dashboard</span>
@@ -26,8 +31,10 @@ import { Fragment } from 'react';
      const guestLinks = (
         <ul>
             <li>
-                <Link to="!#">Developers</Link>
-            </li>
+                <Link to = '/profiles' href="#!">
+                    Developers
+                </Link>
+            </li>             
             <li>
                 <Link to="/register">Register</Link>
             </li>
