@@ -5,6 +5,7 @@ const config = require("config");
 const auth = require ("./middleware/auth.js");
 const Profile = require ("./models/Profile.js");
 const User = require("./models/User.js");
+const Post = require("./models/Post.js");
 const  { check, validationResult } = require('express-validator');
 const { json, response } = require("express");
 
@@ -135,6 +136,7 @@ module.exports = router;
 //@access private
 router.delete("/",auth,async(req,res)=>{
     try {
+        await Post.deleteMany({ user:req.user.id })
         await Profile.findOneAndRemove({user:req.user.id});
         await User.findOneAndRemove({_id:req.user.id}); 
         res.json({msg:"user fucking deleted"});
@@ -260,14 +262,14 @@ router.delete('/experience/:expId',auth, async(req,res)=>{
 //@access private
 
 router.put('/education',[auth,[
-    check('school','school is school').not().isEmpty(),
+    check('school','school is required').not().isEmpty(),
     check('degree','degree is required').not().isEmpty(),
     check('fieldOfStudy','fieldOfStudy is required').not().isEmpty(),
 
 ]], async(req,res)=> {
     const error = validationResult(req);
     if(!error.isEmpty()){
-        return res.status(400).json({error:error.array()});
+        return res.status(400).json({errors:error.array()});
     }
     const {
         school,

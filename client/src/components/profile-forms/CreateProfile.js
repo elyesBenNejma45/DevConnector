@@ -116,7 +116,7 @@ const CreateProfile = ({createProfile,history}) => {
                     <div className="form-group social-input">
           <i className="fab fa-twitter fa-2x"></i>
           <input type="text" placeholder="Twitter URL" name="twitter" value={twitter} onChange={e => onChange(e)}/>
-        </div>
+                    </div>
 
         <div className="form-group social-input">
           <i className="fab fa-facebook fa-2x"></i>
